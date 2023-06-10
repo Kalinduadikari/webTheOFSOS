@@ -1,0 +1,109 @@
+.product-list {
+  color: #333;
+  background: linear-gradient(to right, #202023, #28282c, #2c5364);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .search-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    border: 1px solid rgba(255, 255, 255, 0.2); // Added border
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
+   margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+
+    &__header {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    &__content {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 5px;
+  
+    .pagination__button,
+    .pagination__break {
+      padding: 8px 12px;
+      background-color: #202023;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 20px;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #f1c40f;
+        color: #202023;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
+      }
+    }
+  
+    .pagination__button--active {
+      background-color: #f1c40f;
+      color: #2c3d50;
+    }
+  
+    .pagination__break {
+      cursor: default;
+  
+      &:hover {
+        background-color: #202023;
+        color: #fff;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+    }
+  }
+  
+  
+}
