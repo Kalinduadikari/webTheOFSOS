@@ -154,7 +154,7 @@ export const resetPassword = async (token, password) => {
 
 
   // Check authentication
-export const checkAuthentication = async () => {
+  export const checkAuthentication = async () => {
     try {
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
@@ -163,6 +163,9 @@ export const checkAuthentication = async () => {
   
       return response.status === 200;
     } catch (error) {
+      console.error("Error while checking authentication", error);
+      toast.error("An error occurred while checking authentication. Please try again.");
       return false;
     }
   };
+  
