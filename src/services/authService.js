@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import axiosRetry from 'axios-retry';
 
-export const BACKEND_URL = "https://ofsos-api.onrender.com/api"; 
+export const BACKEND_URL = process.env.REACT_APP_OFSOS_BACKEND_URL;
 
 export const validateEmail = (email) => {
  return email.match(
