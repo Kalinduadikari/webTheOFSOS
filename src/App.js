@@ -42,6 +42,7 @@ function App() {
         <Route path="/order" element={<Orders/>} />
         <Route path="/order/:id" element={<OrderDetails/>} />
         <Route path="/chat" element={<Chats/>} />
+        <Route path='*' element={<div>Error 404 Page not Found!!</div>} />
         
       </Routes>
     </BrowserRouter>
