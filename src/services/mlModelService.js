@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_OFSOS_BACKEND_URL;
+const BACKEND_URL = "https://ofsosnode-api.onrender.com/api";
+
 const API_URL = `${BACKEND_URL}/mlmodel/`;
 
 //GET BEST SELLING PRODUCTS COMBINATIONS
