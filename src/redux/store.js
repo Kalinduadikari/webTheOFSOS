@@ -14,5 +14,5 @@ export const store = configureStore({
     chat: chatReducer,
   },
   // Enable Redux DevTools extension
-  devTools: false,
+  devTools: process.env.NODE_ENV !== 'production',
 });
