@@ -51,10 +51,17 @@ axiosRetry(axiosInstance, {
 //LOGIN USER
 export const loginUser = async (userData) => {
     try {
+      const token = getToken();
+      console.log("Retrieved token signin", token);
       const response = await axiosInstance.post(
         `${BACKEND_URL}/fishmongers/signin`,
         userData,
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+         withCredentials: true,
+        }
       );
   
       if (response.statusText === "OK") {
