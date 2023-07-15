@@ -151,14 +151,33 @@ export const resetPassword = async (token, password) => {
     }
   };
   
+export const getToken = () => {
+  const token = document.cookie
+    .split(";")
+    .map((cookie) => cookie.trim())
+    .find((cookie) => cookie.startsWith("token="));
+
+  if (token) {
+    return token.split("=")[1];
+  }
+
+  return null;
+};
 
 
   // Check authentication
 export const checkAuthentication = async () => {
     try {
+      const token = getToken();
+      console.log("Retrieved token:", token);
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
       );
   
       return response.status === 200;
