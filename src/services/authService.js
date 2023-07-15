@@ -169,6 +169,9 @@ export const resetPassword = async (token, password) => {
         console.error("No token found in the request");
         toast.error("Authentication token is missing. Please log in again.");
         return false;
+      } 
+      else{
+        console.log("Token is available");
       }
   
       const response = await axiosInstance.get(
