@@ -165,6 +165,12 @@ export const resetPassword = async (token, password) => {
     try {
       const token = getAuthToken(req);
   
+      if (!token) {
+        console.error("No token found in the request");
+        toast.error("Authentication token is missing. Please log in again.");
+        return false;
+      }
+  
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
         {
@@ -182,5 +188,6 @@ export const resetPassword = async (token, password) => {
       return false;
     }
   };
+  
   
   
