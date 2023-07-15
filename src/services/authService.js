@@ -153,44 +153,16 @@ export const resetPassword = async (token, password) => {
   
 
 
-  export const getAuthToken = (req) => {
-    return req.cookies.token || null;
-  };
-  
-
-  
-
   // Check authentication
-  export const checkAuthentication = async (req) => {
+export const checkAuthentication = async () => {
     try {
-      const token = getAuthToken(req);
-  
-      if (!token) {
-        console.error("No token found in the request");
-        toast.error("Authentication token is missing. Please log in again.");
-        return false;
-      } 
-      else{
-        console.log("Token is available");
-      }
-  
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        }
+        { withCredentials: true }
       );
   
       return response.status === 200;
     } catch (error) {
-      console.error("Error while checking authentication", error);
-      toast.error("An error occurred while checking authentication. Please try again.");
       return false;
     }
   };
-  
-  
-  
