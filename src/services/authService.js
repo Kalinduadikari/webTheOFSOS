@@ -154,24 +154,17 @@ export const resetPassword = async (token, password) => {
 
 
   // Check authentication
-  export const checkAuthentication = async () => {
+export const checkAuthentication = async () => {
     try {
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("token="))
-        ?.split("=")[1];
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        }
+        { withCredentials: true }
       );
   
       return response.status === 200;
     } catch (error) {
+      console.error("Error while checking authentication", error);
+      toast.error("An error occurred while checking authentication. Please try again.");
       return false;
     }
   };
