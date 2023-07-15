@@ -153,13 +153,26 @@ export const resetPassword = async (token, password) => {
   
 
 
+
+  export const getAuthToken = () => {
+    const tokenCookie = document.cookie
+      .split(";")
+      .find((cookie) => cookie.trim().startsWith("token="));
+  
+    if (tokenCookie) {
+      const token = tokenCookie.split("=")[1];
+      return token;
+    }
+  
+    return null; // Or handle the case when token is not found
+  };
+
+  
+
   // Check authentication
   export const checkAuthentication = async () => {
     try {
-      const token = document.cookie.replace(
-        /(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/,
-        "$1"
-      );
+      const token = getAuthToken(); // Replace with your custom method to retrieve the token from the cookie
   
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
