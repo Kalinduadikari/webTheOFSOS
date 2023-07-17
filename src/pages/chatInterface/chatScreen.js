@@ -3,7 +3,7 @@ import { useState } from "react";
 import Chat from "../../components/chat/chatroom";
 
 
-const serverUrl = process.env.NODE_ENV === "production" ? "https://ofsosnode-api.onrender.com" : "http://localhost:8080";
+const serverUrl = process.env.NODE_ENV === "production" ? "https://api.ofsosweb.live" : "http://localhost:8080";
 const socket = io.connect(serverUrl);
 
 
