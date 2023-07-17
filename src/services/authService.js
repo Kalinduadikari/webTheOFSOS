@@ -51,17 +51,10 @@ axiosRetry(axiosInstance, {
 //LOGIN USER
 export const loginUser = async (userData) => {
     try {
-      const token = getToken();
-      console.log("Retrieved token signin", token);
       const response = await axiosInstance.post(
         `${BACKEND_URL}/fishmongers/signin`,
         userData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-         withCredentials: true,
-        }
+        { withCredentials: true }
       );
   
       if (response.statusText === "OK") {
@@ -158,33 +151,14 @@ export const resetPassword = async (token, password) => {
     }
   };
   
-export const getToken = () => {
-  const token = document.cookie
-    .split(";")
-    .map((cookie) => cookie.trim())
-    .find((cookie) => cookie.startsWith("token="));
-
-  if (token) {
-    return token.split("=")[1];
-  }
-
-  return null;
-};
 
 
   // Check authentication
 export const checkAuthentication = async () => {
     try {
-      const token = getToken();
-      console.log("Retrieved token:", token);
       const response = await axiosInstance.get(
         `${BACKEND_URL}/fishmongers/loggedin`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        }
+        { withCredentials: true }
       );
   
       return response.status === 200;
