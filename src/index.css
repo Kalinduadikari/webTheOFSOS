@@ -1,6 +1,42 @@
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/SF-Pro.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display Medium';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Thin';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/SF-Pro-Display-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF-Pro-Rounded-Ultralight';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/SF-Pro-Rounded-Ultralight.otf') format('opentype');
+}
+/* Add more @font-face rules for other font weights and styles as needed */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

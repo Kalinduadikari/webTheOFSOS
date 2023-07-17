@@ -59,6 +59,8 @@ const NavItem = styled(Button)`
   color: white;
   position: relative;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Gotham';
   &:after {
     content: "";
     position: absolute;
@@ -113,17 +115,17 @@ const Home = () => {
           </Box>
           <Box>
             <ShowOnLogOut>
-              <NavItem sx={{fontFamily:'-apple-system', marginTop: -2}} component={StyledLink} to="/register">
+              <NavItem sx={{fontFamily:'SF Pro Display Medium', marginTop: -2,}} component={StyledLink} to="/register">
                 Register
               </NavItem>
             </ShowOnLogOut>
             <ShowOnLogOut>
-            <NavItem sx={{fontFamily:'-apple-system', marginTop: -2}} component={StyledLink} to="/login">
+            <NavItem sx={{fontFamily:'SF Pro Display Medium', marginTop: -2, fontWeight: 200}} component={StyledLink} to="/login">
                 Login
               </NavItem>
             </ShowOnLogOut>
             <ShowOnLogin>
-            <NavItem sx={{fontFamily:'-apple-system', marginTop: -2}} component={StyledLink} to="/dash">
+            <NavItem sx={{fontFamily:'SF Pro Display Medium', marginTop: -2, fontWeight: 200}} component={StyledLink} to="/dash">
                 Dashboard
               </NavItem>
             </ShowOnLogin>
@@ -132,10 +134,10 @@ const Home = () => {
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#202023', paddingTop: '60px' }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', padding: '3rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', backgroundColor: '#202023', borderRadius: '4px', margin: '2rem' }}>
             <Box sx={{ maxWidth: '50%' }} data-aos="fade-right">
-              <h1 style={{fontFamily: "-apple-system", color:"#ededed", marginTop:-76, marginBottom:-10, marginLeft:30, fontWeight:250, fontSize: "1.65rem"}}>  <span style={{ fontWeight: 500,fontSize:32, background: "linear-gradient(to right, #00BFFF, #bdc2c4)",  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>FISHINV</span> Simplified Inventory Management.</h1>
-              <p style={{fontFamily: "-apple-system", color:"#ededed", marginTop:20, marginLeft:30, textAlign: "justify", fontSize: "0.9rem", fontWeight:100 }}>
+              <h1 style={{fontFamily: "SF Pro Display Medium", color:"#ededed", marginTop:-76, marginBottom:-10, marginLeft:30, fontWeight:250, fontSize: "1.65rem"}}>  <span style={{ fontWeight: 500,fontSize:32, background: "linear-gradient(to right, #00BFFF, #bdc2c4)",  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>FISHINV</span> Simplified Inventory Management.</h1>
+              <p style={{fontFamily: "SF-Pro-Display-Thin", color:"#ededed", marginTop:20, marginLeft:30, textAlign: "justify", fontSize: "0.9rem", }}>
               FISHINV is a powerful inventory management system that seamlessly integrates with the OFSOS project. Optimize your fish market's warehouse operations, control stock efficiently, and gain real-time analytics. Elevate your business with FISHINV today.</p>
-              <Button style={{marginLeft:30, marginTop:10}} variant="contained" color="primary" component={StyledLink} to="/register" sx={{ transition: 'all 0.3s ease-in-out', '&:hover': { transform: 'scale(1.1)' } }}>
+              <Button style={{fontFamily: "SF Pro Display Medium",marginLeft:30, marginTop:10}} variant="contained" color="primary" component={StyledLink} to="/register" sx={{ transition: 'all 0.3s ease-in-out', '&:hover': { transform: 'scale(1.1)' } }}>
                 Get Started
               </Button>
             </Box>
